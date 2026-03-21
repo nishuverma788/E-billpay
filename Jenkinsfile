@@ -1,13 +1,13 @@
 pipeline {
     environment{
-        DOCKERHUB_CREDENTIALS=credentials('docker-jenkins')
+        DOCKERHUB_CREDENTIALS=credentials('DockerhubCred')
     }
     agent any
 
     stages {
         stage('Git Pull') {
             steps {
-                git branch: 'main', url: 'https://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@github.com/Venkateshkvrs/SPE-MajorProject.git'
+                git branch: 'main', url: 'https://github.com/nishuverma788/E-billpay.git'
             }
         }
         stage('Maven Build') {
@@ -20,10 +20,10 @@ pipeline {
         stage('Build Docker Images') {
             steps {
                 dir('./backend') {
-                    sh 'docker build -t venkateshkvrs/ebill-backend .'
+                    sh 'docker build -t nishu839/ebill-backend .'
                 }
                 dir('./frontend') {
-                    sh 'docker build -t venkateshkvrs/ebill-frontend .'
+                    sh 'docker build -t nishu839/ebill-frontend .'
                 }
             }
         }
@@ -35,8 +35,8 @@ pipeline {
         stage('Push Docker Images') {
             steps {
                 script{
-                    sh 'docker push venkateshkvrs/ebill-backend'
-                    sh 'docker push venkateshkvrs/ebill-frontend'
+                    sh 'docker push nishu839/ebill-backend'
+                    sh 'docker push nishu839/ebill-frontend'
                 }
             }
         }
