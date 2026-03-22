@@ -26,10 +26,10 @@ pipeline {
         stage('Build Docker Images') {
             steps {
                 dir('./backend') {
-                    sh 'docker build -t nishu839/ebill-backend .'
+                    sh 'docker build -t nishu839/ebill-backend:latest .'
                 }
                 dir('./frontend') {
-                    sh 'docker build -t nishu839/ebill-frontend .'
+                    sh 'docker build -t nishu839/ebill-frontend:latest .'
                 }
             }
         }
