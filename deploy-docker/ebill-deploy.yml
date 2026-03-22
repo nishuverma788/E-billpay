@@ -21,7 +21,7 @@
 
     - name: Copy Docker Compose file to host
       copy:
-        src: /var/lib/jenkins/workspace/Major/docker-compose.yml
+        src: /var/lib/jenkins/workspace/e_billpay/docker-compose.yml
         dest: /opt/docker-compose.yml
 
     - name: Start Docker Compose stack
