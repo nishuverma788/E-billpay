@@ -1,2 +1,2 @@
-[host1]
-192.168.64.4 ansible_user=venkatesh ansible_sudo_pass='1234'
+[app]
+localhost ansible_connection=local

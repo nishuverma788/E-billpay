@@ -11,12 +11,12 @@
 
     - name: Pull Backend Image
       docker_image:
-        name: venkateshkvrs/ebill-backend
+        name: nishu839/ebill-backend
         source: pull
 
     - name: Pull Frontend Image
       docker_image:
-        name: venkateshkvrs/ebill-frontend
+        name: nishu839/ebill-ebill-frontend
         source: pull
 
     - name: Copy Docker Compose file to host
