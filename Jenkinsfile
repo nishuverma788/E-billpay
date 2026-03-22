@@ -13,7 +13,13 @@ pipeline {
         stage('Maven Build') {
             steps {
                 dir('./backend') {
-                    sh 'mvn clean install'
+                    sh '''
+		    export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+		    export PATH=$JAVA_HOME/bin:$PATH
+		    java -version
+ 		    mvn -version
+                    mvn clean install
+		    '''
                 }
             }
         }
