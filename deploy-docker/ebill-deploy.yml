@@ -16,7 +16,7 @@
 
     - name: Pull Frontend Image
       docker_image:
-        name: nishu839/ebill-ebill-frontend
+        name: nishu839/ebill-frontend
         source: pull
 
     - name: Copy Docker Compose file to host
